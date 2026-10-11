@@ -28,12 +28,11 @@ Excel：数据透视表、风险看板
 ### 不同年龄段的违约率：
 <img width="504" height="288" alt="image" src="https://github.com/user-attachments/assets/c23461c1-9b16-4aca-98eb-9bb458e79c04" />
 ### 不同年龄段与资产组合的组合违约率：
-<img width="449" height="233" alt="image" src="https://github.com/user-attachments/assets/a7850707-900d-41d4-b68c-4deb036db0f8" />
+<img width="443" height="216" alt="image" src="https://github.com/user-attachments/assets/b208e49d-c617-410f-b5ab-b9d84c72da72" />
 ### 不同年龄段与收入层级的组合违约率：
-<img width="449" height="241" alt="image" src="https://github.com/user-attachments/assets/8eb6add6-135c-44ce-9a43-b740477abf68" />
+<img width="440" height="233" alt="image" src="https://github.com/user-attachments/assets/4e79fcaf-00a6-4a65-8fff-865765f23dc6" />
 ### 不同资产组合和收入层级的组合违约率：
-<img width="453" height="235" alt="image" src="https://github.com/user-attachments/assets/9f30b581-4e4c-4a57-a6c8-efd8e292748e" />
-
+<img width="456" height="234" alt="image" src="https://github.com/user-attachments/assets/dd73fb1b-b3e7-4c2b-aef3-a8c7b68b3975" />
 ## 策略建议：
 对“30岁以下 + 收入<200w + 无车无房”人群加强收入核验、收紧审批。
 
