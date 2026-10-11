@@ -28,7 +28,7 @@ Excel：数据透视表、风险看板
 ### 不同年龄段的违约率：
 <img width="504" height="288" alt="image" src="https://github.com/user-attachments/assets/c23461c1-9b16-4aca-98eb-9bb458e79c04" />
 ### 不同年龄段与资产组合的组合违约率：
-<img width="449" height="230" alt="image" src="https://github.com/user-attachments/assets/9f6bd804-b7fb-485e-a98d-68bd3b46deab" />
+<img width="449" height="235" alt="image" src="https://github.com/user-attachments/assets/08b95869-d307-41a0-83ca-e999a59846eb" />
 ### 不同年龄段与收入层级的组合违约率：
 <img width="440" height="233" alt="image" src="https://github.com/user-attachments/assets/4e79fcaf-00a6-4a65-8fff-865765f23dc6" />
 ### 不同资产组合和收入层级的组合违约率：
