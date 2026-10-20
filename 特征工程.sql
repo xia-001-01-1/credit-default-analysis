@@ -2,7 +2,7 @@ alter table train add column income_level varchar(20);
 update train 
 set income_level=case
 when income<2000000 then '<200w'
-when income between2000000 and 4000000 then '200w-400w'
+when income between 2000000 and 4000000 then '200w-400w'
 when income between 4000001 and 6000000 then '400w-600w'
 when income between 6000001 and 8000000 then '600w-800w'
 when income>8000000 then '>800w'
