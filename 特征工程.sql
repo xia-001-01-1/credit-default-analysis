@@ -40,15 +40,7 @@ WHEN house_ownership != 'owned' AND car_ownership = 'yes' THEN '3-仅有车'
 ELSE '4-无房无车'
 END;
 
--- 2.6 特征衍生：
-ALTER TABLE train ADD COLUMN house_status VARCHAR(20);
-UPDATE train 
-SET house_status = CASE 
-WHEN house_ownership = 'owned' THEN '1-有房'
-WHEN house_ownership = 'rented' THEN '2-租房'
-ELSE '3-无房无租'
-END;
-
+-- 2.6 特征衍生结果抽样
 SELECT 
 id, 
 age, 
