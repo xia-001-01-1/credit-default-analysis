@@ -1,9 +1,9 @@
 select 
 count(*) as total_cnt,
-sum(case when label is null then 1 else 0 end) as label_cnt,
-sum(case when age is null then 1 else 0 end) as age_cnt,
-sum(case when income is null then 1 else 0 end) as income_cnt,
-sum(case when profession is null then 1 else 0 end) as profession_cnt,
+sum(case when label is null then 1 else 0 end) as label_null_cnt,
+sum(case when age is null then 1 else 0 end) as age_null_cnt,
+sum(case when income is null then 1 else 0 end) as income_null_cnt,
+sum(case when profession is null then 1 else 0 end) as profession_null_cnt,
 min(age),
 max(age),
 min(income),
