@@ -16,14 +16,14 @@ MIN(current_job_years) AS min_job,
 MAX(current_job_years) AS max_job
 FROM train;
 
--- 探查label的分布情况
+-- 1.2 探查label的分布情况
 SELECT 
 label, 
 COUNT(*) AS label_cnt 
 FROM train 
 GROUP BY label;
 
--- 探查profession的分布情况
+-- 1.3探查profession的分布情况
 SELECT 
 rofession, 
 COUNT(*) AS profession_cnt 
