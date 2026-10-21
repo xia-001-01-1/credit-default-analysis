@@ -30,7 +30,7 @@ ORDER BY 年龄段;
 SELECT ROUND(AVG(label) * 100, 2) AS 整体基准违约率 
 FROM train;
 
---3.5 年龄段与资产组合交叉分析违约率
+--3.5 年龄段与资产组合交叉分析
 SELECT 
 age_group AS 年龄段,
 asset_status AS 资产组合,
@@ -41,7 +41,7 @@ GROUP BY age_group, asset_status
 HAVING COUNT(*) >= 100
 ORDER BY 违约率 DESC;
 
--- 3.6 年龄段与收入层级交叉分析违约率
+-- 3.6 年龄段与收入层级交叉分析
 SELECT 
 age_group AS 年龄段,
 income_level AS 收入层级,
@@ -52,7 +52,7 @@ GROUP BY age_group,income_level
 HAVING COUNT(*) >= 100
 ORDER BY 违约率 DESC;
 
--- 3.7 资产组合与收入层级交叉分析违约率
+-- 3.7 资产组合与收入层级交叉分析
 SELECT 
 asset_status AS 资产组合,
 income_level AS 收入层级,
