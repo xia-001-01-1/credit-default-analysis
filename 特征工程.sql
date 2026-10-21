@@ -1,8 +1,8 @@
 -- 2.特征工程
-
-
+-- 2.1 改变label列数据类型为int
 ALTER TABLE train MODIFY COLUMN label INT;
 
+-- 2.2 进行连续变量分箱：income
 ALTER TABLE train ADD COLUMN income_level VARCHAR(20);
 
 UPDATE train 
@@ -14,6 +14,7 @@ WHEN income BETWEEN 6000001 AND 8000000 THEN '600w-800w'
 WHEN income > 8000000 THEN '>800w'
 END;
 
+-- 2.3 连续变量分箱：age
 ALTER TABLE train ADD COLUMN age_group VARCHAR(20);
 
 UPDATE train
@@ -25,8 +26,10 @@ WHEN age BETWEEN 50 AND 59 THEN '50-59'
 ELSE '>60'
 END;
 
+-- 2.4 查看分类变量的实际取值
 SELECT DISTINCT house_ownership, car_ownership FROM train LIMIT 20;
 
+-- 2.5 特征衍生：资产组合
 ALTER TABLE  train ADD COLUMN asset_status varchar(20);
 UPDATE train
 SET asset_status=
@@ -37,6 +40,7 @@ WHEN house_ownership != 'owned' AND car_ownership = 'yes' THEN '3-仅有车'
 ELSE '4-无房无车'
 END;
 
+-- 2.6 特征衍生：
 ALTER TABLE train ADD COLUMN house_status VARCHAR(20);
 UPDATE train 
 SET house_status = CASE 
