@@ -2,7 +2,7 @@
 -- 2.1 改变label列数据类型为int
 ALTER TABLE train MODIFY COLUMN label INT;
 
--- 2.2 进行连续变量分箱：income
+-- 2.2 连续变量分箱：income
 ALTER TABLE train ADD COLUMN income_level VARCHAR(20);
 
 UPDATE train 
@@ -40,7 +40,7 @@ WHEN house_ownership != 'owned' AND car_ownership = 'yes' THEN '3-仅有车'
 ELSE '4-无房无车'
 END;
 
--- 2.6 特征衍生结果抽样
+-- 2.6 连续变量分箱与特征衍生结果抽样
 SELECT 
 id, 
 age, 
