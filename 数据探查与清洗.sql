@@ -1,5 +1,5 @@
 select 
-count(*),
+count(*) as total_cnt,
 sum(case when label is null then 1 else 0 end) as label_cnt,
 sum(case when age is null then 1 else 0 end) as age_cnt,
 sum(case when income is null then 1 else 0 end) as income_cnt,
