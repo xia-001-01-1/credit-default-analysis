@@ -23,7 +23,7 @@ COUNT(*) AS label_cnt
 FROM train 
 GROUP BY label;
 
--- 1.3探查profession的分布情况
+-- 1.3 探查profession的分布情况
 SELECT 
 rofession, 
 COUNT(*) AS profession_cnt 
