@@ -1,7 +1,7 @@
 # 信贷违约风险多维度分析
 
 ## 项目背景：
-基于16.8万条公开信贷数据，模拟风控分析场景，探索违约率与年龄、资产、收入的关系。
+在金融信贷风控领域，原始数据往往存在大量脏数据，且数据类型不规范。本项目旨在通过**My sql**完成从底层数据清洗、特征离散化、统计显著性检验到多维交叉分析的全链路数据挖掘，并结合**Power BI** 搭建交互式风险看板，为风控审批策略提供科学的数据支撑。
 
 ## 数据来源：
 平台：和鲸社区
@@ -13,28 +13,35 @@
 使用限制：公开数据集，仅用于学习分析，不代表真实业务数据。
   
 ## 使用工具
-SQL：数据清洗、等频分箱、交叉分析
+SQL：复杂条件聚合、表驱动动态分箱、CASE WHEN 特征衍生、WITH ROLLUP 多维透视、嵌套子查询
 Excel：数据透视表、风险看板
+Power BI：数据建模、矩阵热力图、动态切片器
 
 ## 核心发现
 整体违约率12.31%
-30岁以下收入与违约率呈U型非线性关系
-无房无车群体违约率13.01%
+“有车有房”群体存在高杠杆陷阱：收入200w-400w段违约率飙升至13.90%
+30岁以下人群收入与违约率呈U型非线性关系，极低收入（<200w）段违约率最高达 16.29%
+无房无车群体整体违约率13.01%，其中30岁以下无房无车客群高达 15.61%
+超高收入（>800w）未持续压降风险：30岁以下该收入段违约率反弹至16.40%
 
-### 不同资产组合的违约率：
-<img width="508" height="289" alt="image" src="https://github.com/user-attachments/assets/df4aebe2-380e-4d91-a297-d2702ff49977" />
-### 不同收入层级的违约率：
-<img width="508" height="289" alt="image" src="https://github.com/user-attachments/assets/6a11f6c0-b7f3-4d17-b217-d0d8285fff70" />
-### 不同年龄段的违约率：
-<img width="504" height="288" alt="image" src="https://github.com/user-attachments/assets/c23461c1-9b16-4aca-98eb-9bb458e79c04" />
-### 不同年龄段与资产组合的组合违约率：
-<img width="449" height="235" alt="image" src="https://github.com/user-attachments/assets/08b95869-d307-41a0-83ca-e999a59846eb" />
-### 不同年龄段与收入层级的组合违约率：
-<img width="450" height="239" alt="image" src="https://github.com/user-attachments/assets/1930cb84-650b-406e-a51e-6bb2ade0d9e4" />
-### 不同资产组合和收入层级的组合违约率：
-<img width="456" height="234" alt="image" src="https://github.com/user-attachments/assets/dd73fb1b-b3e7-4c2b-aef3-a8c7b68b3975" />
+### 不同年龄段与资产组合的组合违约率：<img width="1264" height="706" alt="image" src="https://github.com/user-attachments/assets/792dc0e6-0f4c-4eae-b435-bbe46ceed398" />
+
+### 不同年龄段与收入层级的组合违约率：<img width="1257" height="751" alt="image" src="https://github.com/user-attachments/assets/3ddecc8d-2abc-49d5-9d80-eaabeb5da1cd" />
+
+### 不同资产组合和收入层级的组合违约率：<img width="1293" height="664" alt="image" src="https://github.com/user-attachments/assets/c428b4d3-ccb2-4ca4-b285-3416b98d6772" />
+
 ## 策略建议：
-对“30岁以下 + 收入<200w + 无车无房”人群加强收入核验、收紧审批。
+对象：有车有房、收入200w-400w客群。
+动作：必须穿透核查真实负债比（DTI），压降初始授信额度，防范“断供”风险。
+
+对象：30岁以下、低收入（<200w）或无房无车客群。
+动作：执行低额度试探策略，要求补充社保/公积金证明，严控多头借贷。
+
+对象：30岁以下、超高收入（>800w）客群。
+动作：增加人工电核与反欺诈排查，提防流水包装或骗贷。
+
+对象：40-59岁、有车有房客群（违约率最低）。
+动作：作为核心盘，主动提额并提供大额分期/经营贷交叉营销。
 
 ## 局限说明：
 公开数据探索性分析，结论为相关性，非因果推断。
